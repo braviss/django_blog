@@ -8,8 +8,15 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^5.0.2"
+pillow = "^10.2.0"
+django-tinymce = "^3.7.1"
+ruff = "^0.2.2"
+flake8 = "^7.0.0"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+exclude = "migrations,settings"
