@@ -38,11 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'view_breadcrumbs',
+    'django_recaptcha',
     'tinymce',
     'article',
 ]
 
+
+
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'django_blog.urls'
 
@@ -103,11 +109,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# reCaptcha
+RECAPTCHA_PUBLIC_KEY = '6LfqdWUpAAAAADGzN5KlTd1g7ZjvXFMLQNiDL6yT'
+RECAPTCHA_PRIVATE_KEY = '6LfqdWUpAAAAADUWWWu-wqH3zW2H-lF7qAUmjYZ8'
+
+# RECAPTCHA_PROXY = {'http': 'http://127.0.0.1:8000', 'https': 'https://127.0.0.1:8000'}
+RECAPTCHA_USE_SSL = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('en', 'English'),
+    ('uk', 'Ukrainian'),
+]
+
+LANGUAGE_CODE = 'en'
+
+LOCALE_PATHS = (
+    BASE_DIR / 'locale',
+)
 
 TIME_ZONE = 'UTC'
 

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "e-Ukraine-Regular";
+  src: url("../fonts/e-Ukraine-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "e-Ukraine-Regular", sans-serif !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/*# sourceMappingURL=styles.css.map */

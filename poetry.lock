@@ -38,6 +38,35 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-modeltranslation"
+version = "0.18.11"
+description = "Translates Django models using a registration approach."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-modeltranslation-0.18.11.tar.gz", hash = "sha256:a6e2c459e3b31852287d030bc6e29fa28576db97455dccd399fe08ac8e9223b9"},
+    {file = "django_modeltranslation-0.18.11-py3-none-any.whl", hash = "sha256:81b68e4dc806a3b779ac88babe1cbd99d5318d374a43b3737a65fb0f4c1cffe8"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+typing-extensions = "*"
+
+[[package]]
+name = "django-recaptcha"
+version = "4.0.0"
+description = "Django recaptcha form field/widget app."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-recaptcha-4.0.0.tar.gz", hash = "sha256:5316438f97700c431d65351470d1255047e3f2cd9af0f2f13592b637dad9213e"},
+    {file = "django_recaptcha-4.0.0-py3-none-any.whl", hash = "sha256:0d912d5c7c009df4e47accd25029133d47a74342dbd2a8edc2877b6bffa971a3"},
+]
+
+[package.dependencies]
+django = "*"
+
+[[package]]
 name = "django-tinymce"
 version = "3.7.1"
 description = "A Django application that contains a widget to render a"
@@ -50,6 +79,26 @@ files = [
 
 [package.dependencies]
 django = ">=3.2"
+
+[[package]]
+name = "django-view-breadcrumbs"
+version = "2.5.1"
+description = "Django generic view breadcrumbs"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "django-view-breadcrumbs-2.5.1.tar.gz", hash = "sha256:b214c3758f6159d1ad8d76a21e7430a9f208be52fc79ba021e13a2ee675dbb3b"},
+    {file = "django_view_breadcrumbs-2.5.1-py3-none-any.whl", hash = "sha256:0405af06d416c661edfea8d0b5023b37ec016edfb9ce8646c6b4a39127d48620"},
+]
+
+[package.dependencies]
+Django = "*"
+
+[package.extras]
+deploy = ["bump2version", "git-changelog", "readme-renderer[md]", "twine"]
+development = ["Django", "Sphinx", "codacy-coverage", "coverage", "django-bootstrap5", "django-filter", "django-tables2", "mock", "pip-tools", "pluggy (>=0.7)", "pytest", "tox", "tox-gh-actions"]
+docs = ["Sphinx"]
+test = ["codacy-coverage", "coverage", "mock", "pluggy (>=0.7)", "pytest", "tox", "tox-gh-actions"]
 
 [[package]]
 name = "flake8"
@@ -252,4 +301,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7762c90c1f4d776c12611e496a70cc2f858522493918753d10c34276e36b5b00"
+content-hash = "5a3265f565d228b40d3e7ac2c517bb472d811c3d64e65fe84764e6b8fe7af36e"

@@ -1,6 +1,8 @@
 import uuid
+from abc import abstractmethod
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 from tinymce import models as tinymce_models
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
@@ -14,6 +16,10 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
+    @abstractmethod
+    def get_absolute_url(self):
+        pass
 
 
 class Article(BaseModel):
@@ -44,6 +50,9 @@ class Article(BaseModel):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     views = models.PositiveIntegerField(default=0)
 
+    def get_absolute_url(self):
+        return reverse('article:article_detail', kwargs={'slug': self.slug})
+
     class Meta:
         verbose_name = "Article"
         verbose_name_plural = "Articles"
@@ -70,6 +79,9 @@ class Category(BaseModel):
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
+
+    def get_absolute_url(self):
+        return reverse('article:category_detail', kwargs={'category_name': self.slug})
 
     def __str__(self):
         return self.name
